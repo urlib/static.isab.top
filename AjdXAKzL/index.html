@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="qrcode.js">
+    </script>
+    <script src="html5-qrcode.js">
+    </script>
+    <style type="text/css" media="screen">
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <!-- Reference: https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference -->
+    <script>
+        window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+        ga('create', 'UA-116309064-4', { 'siteSpeedSampleRate': 100, 'alwaysSendReferrer': true });
+        ga('set', 'forceSSL', true);
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+    <form name="QRform" id="QRform">
+        <textarea name="textField" rows="8" cols="70" onkeyup='updateQRCode(this.value)'
+            onclick="this.focus();this.select();">Freedom is the freedom to say that two plus two make four. If that is granted, all else follows. </textarea>
+    </form>
+
+    <!-- This is where our QRCode will appear in. -->
+    <div id="qrcode"></div>
+
+    <script>
+        function updateQRCode(text) {
+            const element = document.getElementById("qrcode");
+            const bodyElement = document.body;
+            if (element.lastChild)
+                element.replaceChild(showQRCode(text), element.lastChild);
+            else
+                element.appendChild(showQRCode(text));
+
+        }
+        updateQRCode("Freedom is the freedom to say that two plus two make four. If that is granted, all else follows. ");
+    </script>
+</body>
+
+</html>
