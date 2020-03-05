@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="dns-prefetch" href="https://static.isab.top">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+    <meta charset="UTF-8">
+    <script>
+        window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+        ga('create', 'UA-116309064-4', { 'siteSpeedSampleRate': 100, 'alwaysSendReferrer': true });
+        ga('set', 'forceSSL', true);
+        ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+
+<body>
+    <!-- enable proxy server cache -->
+    <script>
+        let urls = ['https://static.isab.top/MCxIflqu/1mb',
+            'http://47.103.204.220/speed-test-file/1mb',
+            'https://cdn.jsdelivr.net/gh/urlib/fvexLVR9/ywOKI2TcLNjzpqV7/1mb']
+
+        for (url of urls) {
+            request_url = url
+            console.log(request_url)
+            fetch(request_url, { method: 'GET', mode: 'no-cors', cache: 'no-store' });
+        }
+    </script>
+
+    <!-- disable proxy server cache -->
+    <script>
+        for (url of urls) {
+            request_url = url + '?time=' + new Date().getTime()
+            console.log(request_url)
+            fetch(request_url, { method: 'GET', mode: 'no-cors', cache: 'no-store' });
+        }
+    </script>
+</body>
+
+</html>
