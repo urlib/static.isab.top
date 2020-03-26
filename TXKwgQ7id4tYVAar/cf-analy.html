@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+    <meta isab_ver_tag="0.0.0-inside">
+
+</head>
+
+<body>
+    <script>
+
+        const isab_ver_tag = document.getElementsByTagName('meta')['isab_ver_tag'].content;
+
+        (async () => {
+            const remote_addr = isab_ver_tag.find("insider") ? "https://static.isab.top/cdn-cgi/trace" : "/cdn-cgi/trace";
+            let map = {};
+
+            const res = await fetch('https://static.isab.top/cdn-cgi/trace');
+            const text = await res.text();
+            const list = await text.split('\n');
+
+            for (item of list) {
+                const it = item.split('=');
+                const key = it[0], value = it[1];
+                map[key] = value;
+            }
+
+            console.log(map);
+        })();
+    </script>
+</body>
