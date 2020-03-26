@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        (async () => {
+            const res = await fetch('/cdn-cgi/trace');
+            const text = await res.text();
+            const list = text.split('\n');
+            let map = {}
+            for (item of list) {
+                const key, value = item.split('=');
+                map[key] = value
+            }
+        })();
+        console.log(map);
+    </script>
+</body>
