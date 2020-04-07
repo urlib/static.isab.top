@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <video id="video_DFgr6Hea" controls class="vjs-16-9" width="100%"></video>
+    <script>
+        const source = 'https://cdn.jsdelivr.net/gh/urlib/waqLj8/FiWSMVjtO4zEkT5P/detention.m3u8';
+        const video = document.getElementById('video_DFgr6Hea');
+
+        if (Hls.isSupported()) {
+            let hls = new Hls();
+            hls.loadSource(source);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                // video.play();
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = source;
+            video.addEventListener('loadedmetadata', function () {
+                // video.play();
+            });
+        }
+    </script>
+</body>
