@@ -1,6 +1,12 @@
 /**
  * @author
  * ISAB Dev Team
+ * @description
+ * Awesome background images for ISAB pages.
+ * You can Load this file from jsDeilvr:
+ * https://cdn.jsdelivr.net/gh/urlib/static.isab.top@latest/js/loadBackground.js
+ * There is also a minified version:
+ * https://cdn.jsdelivr.net/gh/urlib/static.isab.top@latest/js/loadBackground.min.js
  */
 
 (() => {
